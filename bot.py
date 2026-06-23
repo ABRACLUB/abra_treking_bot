@@ -16,7 +16,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-from config import BOT_TOKEN, ADMIN_ID
+from config import 8862547712:AAHSNSb73Y06qvKoU9x7BI3BvCLxo1bJ3S0, 576948888
 from database import Database
 from states import GoalForm, ReportForm
 
@@ -28,7 +28,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Инициализация
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=8862547712:AAHSNSb73Y06qvKoU9x7BI3BvCLxo1bJ3S0)
 dp = Dispatcher(storage=MemoryStorage())
 db = Database("goals.db")
 scheduler = AsyncIOScheduler(timezone="Europe/Moscow")
@@ -317,7 +317,7 @@ async def show_history(message: Message):
 
 @dp.message(Command("all_goals"))
 async def admin_all_goals(message: Message):
-    if message.from_user.id != ADMIN_ID:
+    if message.from_user.id != 576948888:
         return
 
     goals = db.get_all_goals()
